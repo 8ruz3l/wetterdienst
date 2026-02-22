@@ -10,6 +10,6 @@ export const APP_CONFIG = new InjectionToken<AppConfig>('APP_CONFIG');
 
 export const app_config: AppConfig = {
     "dwdApi": {
-        "baseUrl": "https://opendata.dwd.de"
+        "baseUrl": "/dwd-api"
     }
 }

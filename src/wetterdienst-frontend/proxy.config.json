@@ -1,0 +1,10 @@
+{
+  "/dwd-api": {
+    "target": "https://opendata.dwd.de",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/dwd-api": ""
+    },
+    "secure": true
+  }
+}
