@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { DwdApiService } from './dwd-api.service';
+import { DwdApiService } from './weather.service';
 
 
 

@@ -1,7 +1,7 @@
 import { InjectionToken } from "@angular/core";
 
 export interface AppConfig {
-    dwdApi: {
+    API: {
         baseUrl: string;
     }
 }
@@ -9,7 +9,7 @@ export interface AppConfig {
 export const APP_CONFIG = new InjectionToken<AppConfig>('APP_CONFIG');
 
 export const app_config: AppConfig = {
-    "dwdApi": {
-        "baseUrl": "/dwd-api"
+    "API": {
+        "baseUrl": "http://localhost:8080/api"
     }
 }

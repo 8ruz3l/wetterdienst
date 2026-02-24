@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DwdApiService } from 'src/services/dwd-api-service/dwd-api.service';
+import { WeatherService } from 'src/services/weather-service/weather.service';
 
 @Component({
     selector: 'app-dashboard',
@@ -8,11 +8,10 @@ import { DwdApiService } from 'src/services/dwd-api-service/dwd-api.service';
     standalone: false
 })
 export class DashboardComponent {
-    constructor(dwdApiService: DwdApiService) { 
+    constructor(private weatherService: WeatherService) { 
         // Beispielaufruf der DWD API
-        dwdApiService.getAllDailyRainHistories().subscribe({
-            next: (data) => console.log('Regendaten:', data),
-            error: (error) => console.error('Fehler beim Abrufen der Regendaten:', error)
+        weatherService.getTemperature(1420).subscribe(data => {
+            console.log('Temperaturdaten:', data);
         });
     }
 
