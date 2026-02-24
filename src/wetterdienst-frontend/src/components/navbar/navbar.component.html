@@ -1,0 +1,41 @@
+<nav class="bg-gray-900 border-b border-gray-800 px-6 py-3">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+
+    <!-- Logo / Brand -->
+    <div class="flex items-center gap-2.5">
+      <div class="w-7 h-7 rounded-lg bg-emerald-400/10 border border-emerald-400/20 flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+        </svg>
+      </div>
+      <span class="text-sm font-bold text-gray-100 tracking-wide">WeatherDWD</span>
+    </div>
+
+    <!-- Nav Links -->
+    <ul class="flex items-center gap-1">
+      @for (item of navItems; track item.route) {
+        <li>
+          <a
+            [routerLink]="item.route"
+            routerLinkActive="bg-gray-800 text-gray-100 border-gray-700"
+            [routerLinkActiveOptions]="{ exact: false }"
+            class="flex items-center gap-2 px-3.5 py-2 rounded-lg text-sm font-medium text-gray-400 border border-transparent transition-all duration-150 hover:text-gray-100 hover:bg-gray-800 hover:border-gray-700"
+          >
+            <span class="shrink-0" [innerHTML]="item.icon"></span>
+            {{ item.label }}
+          </a>
+        </li>
+      }
+    </ul>
+
+    <!-- Right Side -->
+    <div class="flex items-center gap-3">
+      <div class="flex items-center gap-1.5">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="font-mono text-[10px] text-emerald-400 tracking-wider uppercase">Live</span>
+      </div>
+      
+    </div>
+
+  </div>
+</nav>
